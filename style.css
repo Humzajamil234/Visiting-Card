@@ -1,0 +1,269 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #420088, #2575fc, #00c6ff, #0072ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Card container styling */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px;
+}
+
+/* Card styling */
+.card {
+    width: 100%;
+    max-width: 500px; /* Max width for larger screens */
+    height: 650px;
+    background: linear-gradient(45deg, #420088, #2575fc);
+    border-radius: 15px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    animation: card-background 5s ease-in-out infinite;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s ease;
+    position: relative;
+}
+
+/* Header Section */
+.card-header {
+    text-align: center;
+    padding: 40px 0;
+    background: rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid #fff;
+}
+
+.card-header h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.card-header p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-header .tagline {
+    font-size: 14px;
+    font-style: italic;
+    color: #b2b2b2;
+}
+
+/* Card Body Styling */
+.card-body {
+    padding: 25px;
+    overflow-y: auto;
+    height: calc(100% - 130px);
+}
+
+.card-body .description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.card-body .skills {
+    margin-top: 20px;
+}
+
+.card-body .skills h3 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+    color: palevioletred;
+}
+
+.card-body .skills ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.card-body .skills li {
+    font-size: 16px;
+    margin: 8px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+.card-body .skills li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card-body .skills li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.card-body .skills li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.card-body .skills li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.card-body .skills li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.card-body .contact {
+    margin-top: 30px;
+}
+
+.card-body .contact h3 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+    color: palevioletred;
+}
+
+.card-body .contact ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.card-body .contact li {
+    font-size: 16px;
+    margin: 8px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+.card-body .contact li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card-body .contact li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.card-body .contact li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.card-body .contact li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.card-body .contact li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+/* Footer Section */
+.card-footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #b2b2b2;
+}
+
+/* Hover and animation effects */
+.card:hover {
+    transform: rotateY(20deg);
+}
+
+/* Background color animation */
+@keyframes card-background {
+    0% {
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+    }
+    50% {
+        background: linear-gradient(45deg, #00c6ff, #0072ff);
+    }
+    100% {
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+    }
+}
+
+/* Text fade-in-up animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsive Design */
+
+/* For Tablets and Small Devices */
+@media (max-width: 768px) {
+    .card {
+        max-width: 90%;
+        height: 600px;
+    }
+
+    .card-header h1 {
+        font-size: 28px;
+    }
+
+    .card-header p {
+        font-size: 18px;
+    }
+
+    .card-body .description {
+        font-size: 14px;
+    }
+
+    .card-body .skills h3, .card-body .contact h3 {
+        font-size: 16px;
+    }
+
+    .card-body .skills li, .card-body .contact li {
+        font-size: 14px;
+    }
+}
+
+/* For Mobile Devices */
+@media (max-width: 480px) {
+    .card {
+        max-width: 90%;
+        height: 550px;
+    }
+
+    .card-header h1 {
+        font-size: 24px;
+    }
+
+    .card-header p {
+        font-size: 16px;
+    }
+
+    .card-body .description {
+        font-size: 12px;
+    }
+
+    .card-body .skills h3, .card-body .contact h3 {
+        font-size: 14px;
+    }
+
+    .card-body .skills li, .card-body .contact li {
+        font-size: 12px;
+    }
+
+    .card-footer {
+        font-size: 12px;
+    }
+}
